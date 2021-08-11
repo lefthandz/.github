@@ -1,0 +1,18 @@
+# See: https://docs.github.com/en/actions/learn-github-actions/sharing-workflows-with-your-organization
+
+name: Shared workflow sample
+on:
+  push:
+    branches: [ $default-branch ]
+  pull_request:
+    branches: [ $default-branch ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Run a one-line script
+        run: echo "This is a sample of shared template"
